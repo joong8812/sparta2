@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+
 class TestView(TestCase):
 
     def test_add_view(self) -> None:
