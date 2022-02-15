@@ -17,7 +17,7 @@ def post_like(request: HttpRequest, like_request: LikeRequest) -> Tuple[int, Lik
     return 201, like
 
 
-@router.delete("/", response={204: LikeResponse})
+@router.delete("/", response={204: None})
 def delete_like(request: HttpRequest, user_id: int, article_id: int) -> Tuple[int, None]:
     undo_like(user_id=user_id, article_id=article_id)
     return 204, None
