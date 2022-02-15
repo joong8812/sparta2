@@ -37,7 +37,7 @@ class TestLikeService(TestCase):
         article = Article.objects.create(title="test_title")
 
         # Expect
-        with self.assertRaises(IntegrityError):
+        with self.assertRaises(User.DoesNotExist):
             do_like(invalid_user_id, article.id)
 
     def test_it_should_raise_exception_when_like_an_article_does_not_exist(self) -> None:
@@ -46,7 +46,7 @@ class TestLikeService(TestCase):
         invalid_article_id = 9988
 
         # Expect
-        with self.assertRaises(IntegrityError):
+        with self.assertRaises(Article.DoesNotExist):
             do_like(user.id, invalid_article_id)
 
     def test_like_count_should_increase(self) -> None:
