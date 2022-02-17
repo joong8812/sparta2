@@ -85,6 +85,7 @@ pymysql.install_as_MySQLdb()
 
 DATABASES = {
     "default": {
+        "ATOMIC_REQUESTS": False,
         "ENGINE": "django.db.backends.mysql",
         "NAME": "sparta",
         "USER": "root",
