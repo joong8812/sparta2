@@ -83,7 +83,7 @@ WSGI_APPLICATION = "sparta.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 pymysql.install_as_MySQLdb()
 
-DATABASES: dict[str, dict[str, object]] = {
+DATABASES: dict[str, dict[str, str]] = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "sparta",
